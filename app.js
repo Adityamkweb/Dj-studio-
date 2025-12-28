@@ -57,3 +57,23 @@ cross.oninput=e=>{
   gainA.gain.value=1-v;
   gainB.gain.value=v;
 };
+let recorder, chunks=[];
+
+function startRecord(){
+  let dest = ctx.createMediaStreamDestination();
+  gainA.connect(dest); gainB.connect(dest);
+  recorder = new MediaRecorder(dest.stream);
+  recorder.start();
+  recorder.ondataavailable=e=>chunks.push(e.data);
+}
+
+function stopRecord(){
+  recorder.stop();
+  recorder.onstop=()=>{
+    let blob=new Blob(chunks,{type:"audio/mp3"});
+    let a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="dj-mix.mp3";
+    a.click();
+  }
+}
