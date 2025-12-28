@@ -1,0 +1,17 @@
+body{
+  background:#000;
+  color:#0ff;
+  font-family:sans-serif;
+  text-align:center;
+}
+.deck{
+  border:1px solid #0ff;
+  margin:15px;
+  padding:15px;
+}
+button{
+  background:#0ff;
+  border:none;
+  padding:10px;
+  width:100%;
+}
