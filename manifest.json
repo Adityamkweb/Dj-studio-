@@ -1,0 +1,11 @@
+{
+  "name":"Mobile DJ Studio",
+  "short_name":"DJ Studio",
+  "start_url":"index.html",
+  "display":"standalone",
+  "background_color":"#000",
+  "theme_color":"#0ff",
+  "icons":[
+    {"src":"icon.png","sizes":"192x192","type":"image/png"}
+  ]
+}
