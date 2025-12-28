@@ -2,26 +2,39 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mobile DJ Studio</title>
+<title>Virtual DJ Studio</title>
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>🎧 Mobile DJ Studio</h2>
+<header>🎧 Virtual DJ Studio</header>
 
-<div class="deck">
-  <input type="file" accept="audio/*" id="a">
-  <button onclick="play('a')">Play A</button>
+<div class="dj">
+
+  <!-- DECK A -->
+  <div class="deck">
+    <h3>DECK A</h3>
+    <canvas id="waveA"></canvas>
+    <input type="file" accept="audio/*" id="fileA">
+    <button onclick="playDeck('A')">▶ Play</button>
+  </div>
+
+  <!-- DECK B -->
+  <div class="deck">
+    <h3>DECK B</h3>
+    <canvas id="waveB"></canvas>
+    <input type="file" accept="audio/*" id="fileB">
+    <button onclick="playDeck('B')">▶ Play</button>
+  </div>
+
 </div>
 
-<div class="deck">
-  <input type="file" accept="audio/*" id="b">
-  <button onclick="play('b')">Play B</button>
+<div class="mixer">
+  <label>🎚 Crossfader</label>
+  <input type="range" min="0" max="100" value="50" id="cross">
 </div>
-
-<label>Crossfader</label>
-<input type="range" min="0" max="100" value="50" id="mix">
 
 <script src="app.js"></script>
 </body>
