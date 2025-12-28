@@ -8,41 +8,68 @@
 </head>
 
 <body>
+<header class="top">
+  <div class="track left">Track A</div>
+  <div class="time">00:00</div>
+  <div class="track right">Track B</div>
+</header>
 
-<header>🎧 Virtual DJ Studio</header>
+<div class="wavebars">
+  <canvas id="waveA"></canvas>
+  <canvas id="waveB"></canvas>
+</div>
 
-<div class="dj">
+<div class="dj-console">
 
-  <!-- DECK A -->
-  <div class="deck">
-    <h3>DECK A</h3>
-    <canvas id="waveA"></canvas>
-    <input type="file" accept="audio/*" id="fileA">
-    <button onclick="playDeck('A')">▶ Play</button>
-    <div class="controls">
-  <button onclick="cue('B')">CUE</button>
-  <button onclick="loop('B')">LOOP</button>
+  <!-- LEFT PANEL -->
+  <div class="panel">
+    <button class="fx">FX</button>
+
+    <div class="knob">
+      <span>Bass Boost</span>
+    </div>
+
+    <div class="knob">
+      <span>Virtualizer</span>
+    </div>
+
+    <button class="bass-btn">BASS</button>
+  </div>
+
+  <!-- CENTER MIXER -->
+  <div class="mixer">
+    <div class="vol">
+      <input type="range" orient="vertical">
+      <span>VOL</span>
+      <input type="range" orient="vertical">
+    </div>
+
+    <div class="eq">
+      <input type="range"><label>60Hz</label>
+      <input type="range"><label>230Hz</label>
+      <input type="range"><label>910Hz</label>
+      <input type="range"><label>3kHz</label>
     </div>
   </div>
 
-  <!-- DECK B -->
-  <div class="deck">
-    <h3>DECK B</h3>
-    <canvas id="waveB"></canvas>
-    <input type="file" accept="audio/*" id="fileB">
-    <button onclick="playDeck('B')">▶ Play</button>
-    <div class="controls">
-  <button onclick="cue('A')">CUE</button>
-  <button onclick="loop('A')">LOOP</button>
-</div>
-
+  <!-- RIGHT PANEL -->
+  <div class="panel">
+    <button class="eq-btn">EQ</button>
+    <div class="slider neon"></div>
   </div>
 
-<div class="mixer">
-  <label>🎚 Crossfader</label>
-  <input type="range" min="0" max="100" value="50" id="cross">
 </div>
 
-<script src="app.js"></script>
+<footer class="bottom">
+  <button>▶</button>
+  <button>CUE</button>
+  <button>SET</button>
+
+  <input type="range" id="crossfader">
+
+  <button>RESET</button>
+  <button>▶</button>
+</footer>
+  
 </body>
 </html>
