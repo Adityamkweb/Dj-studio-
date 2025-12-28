@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mobile DJ Studio</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>🎧 Mobile DJ Studio</h2>
+
+<div class="deck">
+  <input type="file" accept="audio/*" id="a">
+  <button onclick="play('a')">Play A</button>
+</div>
+
+<div class="deck">
+  <input type="file" accept="audio/*" id="b">
+  <button onclick="play('b')">Play B</button>
+</div>
+
+<label>Crossfader</label>
+<input type="range" min="0" max="100" value="50" id="mix">
+
+<script src="app.js"></script>
+</body>
+</html>
